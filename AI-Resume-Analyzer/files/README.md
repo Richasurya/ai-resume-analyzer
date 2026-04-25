@@ -1,123 +1,65 @@
-# 🤖 AI Resume Analyzer — CLI Tool
+# 🤖 ATS Resume Analyzer — CLI Tool
 
-A beginner-friendly **command-line Python project** that reads a resume (PDF or TXT),
-extracts key information using NLP, scores it out of 100, and gives actionable tips.
-
----
-
-## 📁 Project Structure
-
-```
-resume_analyzer/
-├── resume_analyzer.py   ← Main program (run this)
-├── sample_resume.txt    ← Test resume to try right away
-├── requirements.txt     ← Python dependencies
-└── README.md            ← You are here
-```
+Match your resume against **any Job Description** and get an ATS score out of 100!
 
 ---
 
-## ⚙️ Setup — Step by Step
+## How to Run
 
-### Step 1 — Make sure Python 3.10+ is installed
+### Step 1 — Install dependency
 ```bash
-python --version
+pip install pdfminer.six
 ```
 
-### Step 2 — (Optional but recommended) Create a virtual environment
+### Step 2 — Run with your resume
 ```bash
-python -m venv venv
-
-# Activate it:
-# macOS / Linux:
-source venv/bin/activate
-
-# Windows:
-venv\Scripts\activate
+python ats_analyzer.py resume.pdf
 ```
 
-### Step 3 — Install dependencies
-```bash
-pip install -r requirements.txt
+### Step 3 — Paste the Job Description
+```
+📋  PASTE YOUR JOB DESCRIPTION BELOW
+    (Press ENTER twice when done)
+
+[paste JD here]
+
+[press Enter twice]
 ```
 
-> NLTK data (punkt, stopwords) is downloaded automatically on first run.
-
----
-
-## ▶️  How to Run
-
-### Analyze the included sample resume (TXT)
-```bash
-python resume_analyzer.py sample_resume.txt
+### Step 4 — See your ATS Score!
 ```
-
-### Analyze your own PDF resume
-```bash
-python resume_analyzer.py /path/to/your_resume.pdf
-```
-
-### Analyze and save a JSON report
-```bash
-python resume_analyzer.py your_resume.pdf -o report.json
-```
-
-### Show help
-```bash
-python resume_analyzer.py --help
+ATS MATCH SCORE
+[████████████████████░░░░] 74%
+🟡  GOOD MATCH — 74/100
 ```
 
 ---
 
-## 📊 What the Tool Does
+## Save Report as JSON
+```bash
+python ats_analyzer.py resume.pdf -o result.json
+```
 
-| Feature | Details |
-|---|---|
-| **Text Extraction** | Reads PDF (via pdfminer) or plain TXT files |
-| **Contact Info** | Extracts email, phone, LinkedIn, GitHub via Regex |
-| **Skills** | Matches 80+ tech & 11 soft skills from a knowledge base |
-| **Education** | Sentence-level NLP to find degree/university lines |
-| **Experience** | Detects years of experience + date ranges |
-| **Score (0–100)** | Weighted across 5 categories (see below) |
-| **Suggestions** | Personalised tips based on what's missing |
-| **JSON Export** | Full structured report saved with `-o` flag |
+---
 
-### Score Breakdown
+## Score Breakdown
 
-| Category | Max Points | How it's calculated |
+| Category | Max Marks | Logic |
 |---|---|---|
-| Skills | 30 | 2 pts/tech skill (cap 20) + 2 pts/soft skill (cap 10) |
-| Sections | 25 | % of 7 key sections present |
-| Experience | 20 | years × 4 pts, capped at 20 |
-| Action Verbs | 15 | 2 pts/verb, capped at 15 |
-| Resume Length | 10 | Sweet spot: 300–800 words |
+| Keyword Match | 50 | % of JD keywords found in resume |
+| Tech Skills | 25 | % of JD tech skills in resume |
+| Soft Skills | 10 | Soft skill overlap |
+| Experience | 10 | Resume exp vs JD required exp |
+| Education | 5 | Degree mentioned |
+| **Total** | **100** | |
 
 ---
 
-## 💡 Interview Talking Points
-
-- **Why NLTK?** Lightweight, beginner-friendly, no model download needed
-- **Why pdfminer over PyPDF2?** Better text extraction accuracy for complex layouts
-- **Scoring system** — explain the weighted rubric and why each category matters
-- **Extensibility** — swap keyword lists, add spaCy NER, or connect to a job description for gap analysis
-
----
-
-## 🔧 Customisation Ideas (to impress interviewers)
-
-1. **Add spaCy NER** to detect person names, org names automatically
-2. **Job Description Match** — pass a JD file and show keyword overlap %
-3. **ATS Simulation** — flag non-ATS-friendly formatting patterns
-4. **Rich library** — replace plain print with coloured terminal output
-5. **Export to PDF** — generate a nicely formatted PDF report
-
----
-
-## 📦 Dependencies
-
+## Files
 ```
-nltk>=3.8.1          # NLP tokenisation & stopwords
-pdfminer.six>=20221105  # PDF text extraction
+ats_analyzer/
+├── ats_analyzer.py   ← Main program
+├── sample_jd.txt     ← Sample Job Description to test
+├── requirements.txt  ← Dependencies
+└── README.md
 ```
-
-Both are pure-Python, no C extensions or heavy models required.

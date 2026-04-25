@@ -1,0 +1,43 @@
+Job Title: Software Development Engineer (SDE) - Fresher
+
+Company: TechCorp India Pvt Ltd
+Location: Delhi, India
+
+About the Role:
+We are looking for a passionate and driven Software Development Engineer to join our growing engineering team. You will work on building scalable web applications and backend services.
+
+Responsibilities:
+- Design and develop features for our web platform using React and Node.js
+- Write clean, maintainable code in Python and JavaScript
+- Work with SQL and MongoDB databases
+- Participate in code reviews and agile ceremonies
+- Write unit tests and perform manual testing
+- Collaborate with cross-functional teams using Git and GitHub
+- Debug and fix software bugs reported by QA team
+
+Requirements:
+- B.Tech / B.E in Computer Science or related field
+- Strong knowledge of Data Structures and Algorithms (DSA)
+- Proficiency in Python or JavaScript
+- Experience with HTML, CSS, React (basic is fine)
+- Understanding of OOP concepts
+- Knowledge of SQL and basic database concepts
+- Familiarity with Git and version control
+- Good problem solving and communication skills
+- Knowledge of SDLC and software development lifecycle
+
+Good to Have:
+- Experience with REST APIs
+- Knowledge of any cloud platform (AWS, Azure, GCP)
+- Exposure to Docker or CI/CD pipelines
+- Manual testing or QA experience
+
+Soft Skills:
+- Strong communication skills
+- Team collaboration and teamwork
+- Quick learner and adaptability
+- Attention to detail
+- Problem solving mindset
+
+Experience: 0-1 years (Freshers welcome)
+Education: Bachelor's degree in Computer Science or Engineering

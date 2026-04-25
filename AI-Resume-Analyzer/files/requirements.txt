@@ -1,2 +1,1 @@
-nltk>=3.8.1           # optional: only needed if you extend with NER/POS tagging
 pdfminer.six>=20221105
